@@ -2,17 +2,28 @@ server:
   port: 8080
   servlet:
     context-path: /cxk
+
 spring:
+  profiles:
+    active: dev
   jpa:
-    show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   datasource:
     url: jdbc:mysql://101.200.48.39:3306/db_cxk?characterEncoding=utf8&useSSL=true
     username: cxkuser
     password: cxk@123
-  profiles:
-    active: dev
+---
+spring:
+  profiles: dev
+  jpa:
+    show-sql: true
+---
+spring:
+  profiles: prod
+  jpa:
+    show-sql: false
+
 #logging:
 #  level:
 #    org.springframework.web: debug
