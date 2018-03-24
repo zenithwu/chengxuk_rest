@@ -1,7 +1,7 @@
 package com.chengxuk.controller;
 
-import com.chengxuk.dao.entity.Customer;
-import com.chengxuk.dao.service.CustomerRepository;
+import com.chengxuk.domain.entity.Customer;
+import com.chengxuk.domain.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @PostMapping(path="/add") // Map ONLY GET Requests
+    @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody ResponseEntity addNewCustomer (@RequestParam(required = false,defaultValue = "") String name
             , @RequestParam String email, @RequestParam String phone
             ,@RequestParam String courseName, @RequestParam String question) {
@@ -35,7 +35,7 @@ public class CustomerController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody ResponseEntity getAllCustomers() {
+    public @ResponseBody ResponseEntity findAllCustomers() {
         // This returns a JSON or XML with the users
         return ResponseEntity.ok(customerRepository.findAll());
     }

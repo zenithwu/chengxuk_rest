@@ -1,4 +1,4 @@
-package com.chengxuk.dao.entity;
+package com.chengxuk.domain.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

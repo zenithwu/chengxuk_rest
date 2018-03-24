@@ -1,6 +1,6 @@
-package com.chengxuk.dao.service;
+package com.chengxuk.domain.repository;
 
-import com.chengxuk.dao.entity.User;
+import com.chengxuk.domain.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
 

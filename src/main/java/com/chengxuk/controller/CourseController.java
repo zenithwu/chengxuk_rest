@@ -1,7 +1,6 @@
 package com.chengxuk.controller;
 
-import com.chengxuk.dao.entity.Course;
-import com.chengxuk.dao.service.CourseRepository;
+import com.chengxuk.domain.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,7 @@ public class CourseController {
         return ResponseEntity.ok(courseRepository.findAll());
     }
     @GetMapping(path="/findById")
-    public @ResponseBody ResponseEntity getAllCourses(@RequestParam Long id) {
+    public @ResponseBody ResponseEntity findById(@RequestParam Long id) {
         // This returns a JSON or XML with the courses
         return ResponseEntity.ok(courseRepository.findById(id));
     }

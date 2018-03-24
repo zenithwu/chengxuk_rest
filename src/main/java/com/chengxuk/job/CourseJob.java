@@ -1,6 +1,6 @@
 package com.chengxuk.job;
 
-import com.chengxuk.dao.service.CourseRepository;
+import com.chengxuk.domain.repository.CourseRepository;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 

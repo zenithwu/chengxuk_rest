@@ -1,7 +1,7 @@
 package com.chengxuk.controller;
 
-import com.chengxuk.dao.entity.User;
-import com.chengxuk.dao.service.UserRepository;
+import com.chengxuk.domain.entity.User;
+import com.chengxuk.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(path="/add") // Map ONLY GET Requests
+    @GetMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody ResponseEntity addNewUser (@RequestParam String name
             , @RequestParam String email) {
         // @ResponseBody means the returned String is the response, not a view name
