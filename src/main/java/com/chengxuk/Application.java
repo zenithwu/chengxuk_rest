@@ -47,7 +47,7 @@ public class Application {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/cxk").allowedOrigins("http://101.200.48.39:80");
+                registry.addMapping("/cxk").allowedOrigins("*");
             }
         };
     }
