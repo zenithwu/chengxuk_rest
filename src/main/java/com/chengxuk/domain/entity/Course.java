@@ -1,9 +1,7 @@
 package com.chengxuk.domain.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 public class Course {
 
@@ -21,6 +19,14 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public CourseType getType() {
+        return type;
+    }
+
+    public void setType(CourseType type) {
+        this.type = type;
     }
 
     public String getTitle() {
@@ -47,6 +53,15 @@ public class Course {
         this.price = price;
     }
 
+    public Double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public void setCurrentPrice(Double currentPrice) {
+        this.currentPrice = currentPrice;
+    }
+
+
     public String getPicUrl() {
         return picUrl;
     }
@@ -71,16 +86,29 @@ public class Course {
         this.favNum = favNum;
     }
 
+    public Integer getWorkNum() {
+        return workNum;
+    }
+
+    public void setWorkNum(Integer workNum) {
+        this.workNum = workNum;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @JoinColumn(name="course_type")
+    @ManyToOne
+    private CourseType type;
     private String title;
     private String content;
     private Double price;
+    private Double currentPrice;
     private String picUrl;
     private Integer joinNum;
     private Integer favNum;
-
+    //就业任务
+    private Integer workNum;
 
 }
