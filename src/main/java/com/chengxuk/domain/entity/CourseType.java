@@ -1,10 +1,13 @@
 package com.chengxuk.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties(value={"course"})
 public class CourseType {
 
     public Integer getId() {

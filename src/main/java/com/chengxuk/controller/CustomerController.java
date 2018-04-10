@@ -17,9 +17,9 @@ public class CustomerController {
     private CustomerRepository customerRepository;
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody ResponseEntity addNewCustomer (@RequestParam(required = false,defaultValue = "") String name
-            , @RequestParam String email, @RequestParam String phone
-            ,@RequestParam String courseName, @RequestParam String question) {
+    public @ResponseBody ResponseEntity addNewCustomer (@RequestParam String name
+            , @RequestParam(required = false,defaultValue = "")  String email, @RequestParam String phone
+            ,@RequestParam(required = false,defaultValue = "")  String courseName, @RequestParam(required = false,defaultValue = "")  String question) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
